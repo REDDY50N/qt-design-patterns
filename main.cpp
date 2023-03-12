@@ -35,17 +35,30 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    /// SINGLETON:
+    // SINGLETON:
+    // ------------------------------------------
 #ifdef SINGLETON
+    SimpleSingleton::instance().foo();
     SimpleSingleton::instance().bar();
 #endif
 
-    /// PROTOTYPE:
-#ifdef SINGLETON
-    SimpleSingleton::instance().bar();
+    // PROTOTYPE:
+    // ------------------------------------------
+#ifdef PROTOTYPE
+    QSharedPointer<FighterPrototype> StromtrooperBoss(new FighterPrototype);
+    StromtrooperBoss->setEnergyVal(150);
+
+    QSharedPointer<FighterPrototype> StromtrooperClone1(StromtrooperBoss->clone());
+    QSharedPointer<FighterPrototype> StromtrooperClone2(StromtrooperBoss->clone());
+    StromtrooperClone2->setEnergyVal(180);
+
+    qDebug() << "Energy of Stromtrooper Boss Prototype: " << StromtrooperBoss->energy();
+    qDebug() << "Energy of Stromtrooper Clone #1: " << StromtrooperClone1->energy();
+    qDebug() << "Energy of Stromtrooper Clone #2: " << StromtrooperClone2->energy();
 #endif
 
-    /// FACTORY:
+    // FACTORY:
+    // ------------------------------------------
 #ifdef FACTORY
     // Objekt der Klasse ProductA mit  Factory erzeugen:
     IProduct* product = ProductFactory::createProduct("A");
