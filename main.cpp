@@ -1,4 +1,15 @@
-#define SINGLETON
+// ==============================================
+// DESIGN PATTERN
+// ==============================================
+// Date:    02/2023
+// Purpose: Playground for C++ Design Patterns
+// ==============================================
+
+// Hint:
+// choose which pattern to test by uncomment the define
+//#define SINGLETON
+//#define FACTORY
+#define PROTOTYPE
 
 #ifdef SINGLETON
 #include "singleton.h"
@@ -9,11 +20,17 @@
 #include "smartfactory.h"
 #endif
 
+#ifdef PROTOTYPE
+#include "prototype.h"
+#endif
+
 #include <QCoreApplication>
 #include <iostream>
 
 
-
+// ==============================================
+// MAIN
+// ==============================================
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -23,6 +40,10 @@ int main(int argc, char *argv[])
     SimpleSingleton::instance().bar();
 #endif
 
+    /// PROTOTYPE:
+#ifdef SINGLETON
+    SimpleSingleton::instance().bar();
+#endif
 
     /// FACTORY:
 #ifdef FACTORY

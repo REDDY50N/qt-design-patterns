@@ -10,6 +10,7 @@ CONFIG -= app_bundle
 SOURCES += \
         factory.cpp \
         main.cpp \
+        prototype.cpp \
         singleton.cpp \
         smartfactory.cpp
 
@@ -23,5 +24,6 @@ DISTFILES += \
 
 HEADERS += \
     factory.h \
+    prototype.h \
     singleton.h \
     smartfactory.h
