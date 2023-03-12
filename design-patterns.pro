@@ -10,6 +10,7 @@ CONFIG -= app_bundle
 SOURCES += \
         factory.cpp \
         main.cpp \
+        singleton.cpp \
         smartfactory.cpp
 
 # Default rules for deployment.
@@ -22,4 +23,5 @@ DISTFILES += \
 
 HEADERS += \
     factory.h \
+    singleton.h \
     smartfactory.h

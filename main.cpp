@@ -1,16 +1,31 @@
+#define SINGLETON
+
+#ifdef SINGLETON
+#include "singleton.h"
+#endif
+
+#ifdef FACTORY
 #include "factory.h"
 #include "smartfactory.h"
+#endif
 
 #include <QCoreApplication>
 #include <iostream>
+
 
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
+    /// SINGLETON:
+#ifdef SINGLETON
+    SimpleSingleton::instance().bar();
+#endif
+
 
     /// FACTORY:
+#ifdef FACTORY
     // Objekt der Klasse ProductA mit  Factory erzeugen:
     IProduct* product = ProductFactory::createProduct("A");
 
@@ -54,6 +69,7 @@ int main(int argc, char *argv[])
     }
 
      */
+#endif
 
     return a.exec();
 }
