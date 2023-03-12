@@ -12,7 +12,8 @@ SOURCES += \
         main.cpp \
         prototype.cpp \
         singleton.cpp \
-        smartfactory.cpp
+        smartfactory.cpp \
+        strategy.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -26,4 +27,5 @@ HEADERS += \
     factory.h \
     prototype.h \
     singleton.h \
-    smartfactory.h
+    smartfactory.h \
+    strategy.h
