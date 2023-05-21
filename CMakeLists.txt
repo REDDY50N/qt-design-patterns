@@ -26,7 +26,6 @@ set(SOURCES
 #qt_add_resources(SOURCES ui/qml.qrc)
 qt_add_executable(QtDesignPatterns  ${SOURCES} ${HEADERS} )
 
-
 set_target_properties(QtDesignPatterns PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
